@@ -1,0 +1,468 @@
+import random
+name = input("What is your name? ") print("Good Luck ! ", name)
+words = ['rainbow', 'computer', 'science', 'programming', 'python', 'mathematics', 'player', 'condition', 'reverse', 'water', 'board', 'geeks']
+word = random.choice(words) print("Guess the characters") 
+guesses = ''
+turns = 12
+while turns > 0:
+    failed = 0
+    for char in word:
+        if char in guesses: 
+            print(char)
+        else:
+            print("_") 
+            failed += 1
+    if failed == 0:
+        print("You Win") 
+        break
+    guess = input("guess a character:") guesses += guess
+    if guess not in word: 
+        turns -= 1
+        print("Wrong")
+        print("You have", + turns, 'more guesses')
+if turns == 0: 
+print("You Loose") 
+
+
+
+
+def add(a,b): 
+    return a+b 
+def sub(c,d): 
+    return c-d 
+def mul(e,f): 
+    return e*f 
+def div(g,h): 
+    return g/h
+print("=================") 
+print("1. TO PERFORM ADDITION")
+print("2. TO PERFORM SUBTRACTION") 
+print("3. TO PERFORM MULTIPICATION") 
+print("4. TO PERFORM DIVISION")
+print("5. Exit") print("=================")
+
+while(1):
+    choice = int(input("Enter Your choice")) 
+    if choice ==1:
+        a=int(input("Enter the 1st value")) 
+        b=int(input("Enter the 2nd value")) 
+        print(add(a,b))
+    elif choice ==2:
+        c=int(input("Enter the 1st value")) 
+        d=int(input("Enter the 2nd value")) 
+        print(sub(c,d))
+    elif choice ==3:
+        e=int(input("Enter the 1st value")) 
+        f=int(input("Enter the 2nd value"))
+        print(mul(e,f)) 
+    elif choice ==4:
+        g=int(input("Enter the 1st value"))
+        h=int(input("Enter the 2nd value")) print(div(g,h))
+    elif choice ==5:
+        print("Exited") 
+        break
+    else:
+        print("wrong choice") 
+
+
+
+
+print("List Built-In Functions:\n 1. Length of List \n 2. Append function \n 3. Sort function \n 4. Insert function \n 5. Reverse Function \n 6. Pop function \n 7. Exit \n ")
+lst = []
+x=int(input("Enter the number of elements in List")) 
+print("Enter", x , "Items")
+for i in 
+    range(x): 
+    v=input() 
+    lst.append(v)
+print("The items of the List are", lst)
+while(1):
+    n=int(input("Enter your Choice: "))
+    if(n==1):
+        print("Length of the List is:",len(lst))
+    elif (n==2):
+        print("Enter the element to append") lst.append(input())
+        print("The items of the List are", lst)
+    elif (n==3): 
+        print("Sorting the list") 
+        lst.sort()
+        print("The items of the Sorted List are", lst)
+    elif (n==4):
+        print("Insert into list")
+        p=int(input("Enter the position to insert")) 
+        a=input("Enter the Item")
+        lst.insert(p,a)
+        print("The items of the List are", lst)
+    elif (n==5): 
+        print("Reverse of list") 
+        lst.reverse()
+        print("The items of the List are", lst)
+    elif (n==6):
+        print("Delete item from the list") 
+        r=int(input("Enter the position to delete")) lst.pop(r)
+        print("The items of the List are", lst)
+    elif (n==7): 
+        print("Exited") 
+        break
+    else:
+        print("Invalid Choice") 
+
+
+
+def test(lst_tuples):
+
+    result = [list(el) for el in lst_tuples] 
+    return result
+lst_tuples = [(1,2), (2,3), (3,4)]
+print("Original list of tuples:") 
+print(lst_tuples)
+print("Convert the said list of tuples to a list of lists:") 
+print(test(lst_tuples))
+lst_tuples = [(1,2), (2,3,5), (3,4), (2,3,4,2)]
+
+print("\n Original list of tuples:") 
+print(lst_tuples)
+print("Convert the said list of tuples to a list of lists:") 
+print(test(lst_tuples))
+
+
+# Create a Numeric 
+Tuple intTuple = ()
+number = int(input("Please enter the Total Tuple Items to store = ")) 
+for i in range(1, number + 1):
+    value = int(input("Please enter %d binary Tuple Item = " %i)) intTuple += (value,)
+
+
+print("Tuple Items = ", intTuple)
+# using int() with base to get actual number 
+res = int("".join(str(ele) for ele in intTuple), 2)
+
+
+# printing result
+
+print("Decimal number is : " + str(res)) 
+
+
+
+
+
+
+marks = {}
+n=int(input("Enter the number of students"))
+for i in range(n):
+    student_name = input("Enter student's name: ")
+    student_mark = input("Enter student's mark: ")
+    marks[student_name.title()] = student_mark
+
+print("\nOriginal Dictionary = ", marks)
+smarks = sorted(marks.items())
+print("Sorted Dictionary in Ascending= ", smarks)
+
+kmarks= sorted(marks.keys())
+print("\nSorted Dictionary Keys in Ascending = ", kmarks)
+
+vmarks = sorted(marks.values())
+print("Sorted Dictionary Values in Ascending = ", vmarks)
+
+
+
+
+
+from functools import reduce 
+def fahrenheit(T):
+    return ((float(9)/5)*T+32) 
+def celsius(T):
+    return (float(5)/9)*(T - 32) 
+temperatures = (36.5, 37, 37.5, 38, 39) 
+F = map(fahrenheit, temperatures)
+C = map(celsius, F)
+
+temperature_in_fahrenheit = list(map(fahrenheit, temperatures)) 
+temperature_in_celsius = list(map(celsius, temperature_in_fahrenheit)) 
+print(temperature_in_fahrenheit)
+print(temperature_in_celsius)
+
+filter_result = list(filter(lambda x:x >= 37 and x <= 38 , temperatures)) 
+print(filter_result)
+reduce_result = reduce(lambda num1, num2: num1*num2, temperatures) 
+reducesum = reduce(lambda num1, num2: num1 - num2, temperatures) 
+print(reduce_result) 
+
+
+
+
+//FILE 1:SAVE AS module1.py 
+def triangle(a,b,c):
+    peri = (a+b+c)/2
+    print (" The Semi perimeter of Triangle :", peri) 
+    area = ( peri * (peri-a) * (peri-b) * (peri-c)) ** 0.5 
+    print ( " The Area of Triangle is :", area)
+
+
+//FILE2:SAVE AS module2.py 
+def rectangle(a,b):
+   peri = 2 * (a+b)
+   print (" The Semi perimeter of Rectangle :", peri) 
+   area = a * b
+   print ( " The Area of Rectangle is :", area)
+
+//FILE3:SAVE AS module3.py 
+def square(a):
+    peri = 4 * (a)
+    print (" The Semi perimeter of Square :", peri) 
+    area = a * a
+    print ( " The Area of Square is :", area)
+
+//FILE4:SAVE AS final.py
+from module1 import triangle 
+from module2 import rectangle 
+from module3 import square 
+triangle(5,6,7)
+rectangle(5,10) 
+square(5) 
+
+
+
+
+class employee(): 
+    empcount = 0
+    def   init (self, eid, name, salary, did): 
+        self.eid = eid
+        self.name = name 
+        self.salary = salary 
+        self.did = did 
+        employee.empcount += 1
+
+def displayemployee(self):
+    print("eid:", self.eid, ",name:", self.name, ",salary:", self.salary, ",did:", self.did) 
+    emp1 = employee(1, "zara", 2000, 10)
+    emp2 = employee(2, "meera", 4000, 20) 
+    emp1.displayemployee() 
+    emp2.displayemployee()
+    print("total employee %d" %employee.empcount) 
+
+
+
+
+import re
+
+def text_match(text):
+    patterns= '^[a-zA-Z0-9_]*$' 
+    if re.search(patterns,text):
+        return 'found a match!' 
+    else:
+        return('not matched!')
+
+
+def end_num(string):
+
+    text= re.compile(r".*[0-9]$") 
+    if text.match(string):
+        return "true" 
+    else:
+        return "false"
+
+def email_match(email):
+
+    regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$' 
+    if(re.search(regex,email)):
+        return "valid email!" 
+    else:
+        return('not valid!')
+
+inp=(str(input( ' Enter the string want to check: ' ))) 
+print(text_match(inp))
+inp=(str(input( ' Enter the string ended with number to check: ' ))) 
+print(end_num(inp))
+user_mail=(input( ' Enter your email id: ' )) 
+print(email_match(user_mail)) 
+
+
+
+
+def readcontent():
+    for i in list(open("data.txt","r")):
+       print(i.rstrip())
+def count():
+    with open("data.txt","r") as f1: data=f1.read()
+    cnt_ucase =0 
+    cnt_lcase=0 
+    cnt_digits=0
+    for ch in data:
+        if ch.islower(): 
+            cnt_lcase+=1
+        if ch.isupper(): 
+            cnt_ucase+=1
+        if ch.isdigit(): 
+            cnt_digits+=1
+    print("Total Number of Upper Case letters are:",cnt_ucase) 
+    print("Total Number of Lower Case letters are:",cnt_lcase) 
+    print("Total Number of Digits are:",cnt_digits)
+    f1.close()
+
+def search():
+    cnt = 0
+    word_search = input("Enter the words to search:") with open("data.txt","r") as f1:
+    for data in f1:
+        words = data.split() 
+    for word in words:
+        if (word == word_search):
+            cnt+=1
+            print(word_search, "found ", cnt, " times from the file")
+
+def append():
+    text = input("Enter text to append in the file:") 
+    with open("data.txt","a") as f1:
+    f1.write(text) 
+    f1.close()
+
+
+print("===============================================================")
+
+print("1. Read the contents of file")
+print("2. Count the total number of upper case, lower case, and digits") print("3. Find the total occurrences of a specific word")
+print("4. Append the contents") print("5. Exit")
+print("===============================================================")
+
+while(1):
+    choice = int(input("Enter Your choice")) 
+    if choice ==1:
+        readcontent() 
+    elif choice ==2: 
+        count()
+    elif choice ==3: 
+        search()
+    elif choice ==4: 
+        append()
+    elif choice ==5:
+        print("Exited") 
+        break
+    else:
+        print("wrong choice") 
+
+
+
+
+
+
+import string
+
+print("String Functions:\n 1. String Length \n 2. endswith function \n 3. find function \n 4. capitalize, Upper, Lower function \n 5.Exit\n")
+while(1):
+    n=int(input("Enter your Choice: "))
+    if(n==1):
+        str = input("Enter a String: ") 
+        print("Length of the string is:",len(str))
+    elif (n==2):
+        str = input("Enter a String: ") 
+        x = str.endswith(".")
+        print("The string ends with . " ,x)
+    elif (n==3):
+        str1 = input("Enter the first String: ")
+        x = str1.find(input("Enter the string to find")) 
+            if x:
+                print("found") 
+            else:
+                print("Not Found")
+    elif (n==4):
+         str1 = input("Enter the first String: ") 
+         print("Capitalize: ", (str1.capitalize())) 
+         print("Upper Case: ", (str1.upper()))
+         print("Lower Case: ", (str1.lower()))
+    elif (n==5): 
+        print("Exited") 
+        break
+    else:
+        print("Invalid Choice") 
+
+
+
+
+import sqlite3
+db=sqlite3.connect('test.db')
+print("Database Operations:\n 1. Create database \n 2. Insert \n 3. Update \n 4. Delete \n 
+5. Select \n 6. Exit\n")
+def create():           
+    cur =db.cursor()
+    cur.execute('''CREATE TABLE student (
+    regno INTEGER PRIMARY KEY ,
+    name TEXT (40) NOT NULL,
+    age INTEGER,
+    percentage REAL);''')
+    print ('table created successfully')
+
+   
+def insert():
+    db=sqlite3.connect('test.db')
+    regno=int(input("Enter Register Number:"))
+    name=input("Enter Student Name:")
+    age=int(input("Enter Age:"))
+    percentage=float(input("Enter Percentage:"))
+    qry="insert into student values(%d, '%s', %d, %f)"
+    cur=db.cursor()
+    cur.execute(qry %(regno, name, age, percentage))
+    print("Record Inserted Successfully")
+    db.commit()
+ 
+def update():
+    db=sqlite3.connect('test.db')
+    regno=int(input("Enter Register Number of the student to be updated:"))
+    name=input("Enter Student Name:")
+    age=int(input("Enter Age:"))
+    percentage=float(input("Enter Percentage:"))
+    qry="update student set name= '%s', age = %d, percentage = '%f'  where regno = %d"
+    cur=db.cursor()
+    cur.execute(qry %(name, age, percentage, regno))
+    print("Record Updated Successfully")
+    db.commit()
+
+def delete():
+    db=sqlite3.connect('test.db')
+    regno=int(input("Enter Register Number of the student to be deleted:"))
+    qry="DELETE from student where regno=%d;"
+    cur=db.cursor()
+    cur.execute(qry %(regno))
+    print("Record Deleted Successfully")
+    db.commit()
+
+def select():
+    db=sqlite3.connect('test.db')
+    sql="SELECT * from student;"
+    cur=db.cursor()
+    cur.execute(sql)
+    while True:
+        record=cur.fetchone()
+        if record==None:
+            break
+        print(record)
+    db.close()
+
+while(1):
+    n=int(input("Enter your Choice: "))
+    if n==1:
+        create()
+    elif n==2:
+        insert()
+    elif n==3:
+        update()
+    elif n==4:
+        delete()
+    elif n==5:
+        select()
+    elif n==6:
+        print("Exited")
+        break
+    else:
+        print("wrong choice")
+
+
+
+
+
+
+
+
+
+
+
+
