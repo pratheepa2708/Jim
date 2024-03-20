@@ -1,27 +1,37 @@
 import random
-name = input("What is your name? ") print("Good Luck ! ", name)
-words = ['rainbow', 'computer', 'science', 'programming', 'python', 'mathematics', 'player', 'condition', 'reverse', 'water', 'board', 'geeks']
-word = random.choice(words) print("Guess the characters") 
+
+name = input("What is your name? ")
+print("Good Luck!", name)
+
+words = ['rainbow', 'computer', 'science', 'programming', 'python', 'maths', 'player', 'condition', 'reverse', 'water', 'board', 'geeks']
+word = random.choice(words)
+
+print("Guess the characters")
 guesses = ''
 turns = 12
+
 while turns > 0:
     failed = 0
     for char in word:
-        if char in guesses: 
-            print(char)
+        if char in guesses:
+            print(char, end=' ')
         else:
-            print("_") 
+            print("_", end=' ')
             failed += 1
     if failed == 0:
-        print("You Win") 
+        print("\nCongratulations! You win!")
         break
-    guess = input("guess a character:") guesses += guess
-    if guess not in word: 
+    
+    guess = input("\nGuess a character: ")
+    guesses += guess
+    
+    if guess not in word:
         turns -= 1
         print("Wrong")
-        print("You have", + turns, 'more guesses')
-if turns == 0: 
-print("You Loose") 
+        print("You have", turns, "more guesses")
+        
+        if turns == 0:
+            print("You lose. The word was:", word)
 
 
 
@@ -67,79 +77,104 @@ while(1):
 
 
 
+
+
+
+
 print("List Built-In Functions:\n 1. Length of List \n 2. Append function \n 3. Sort function \n 4. Insert function \n 5. Reverse Function \n 6. Pop function \n 7. Exit \n ")
 lst = []
-x=int(input("Enter the number of elements in List")) 
+print("________________________________________")
+x=int(input("Enter the number of elements in List :")) 
 print("Enter", x , "Items")
-for i in 
-    range(x): 
+for i in range(x): 
     v=input() 
     lst.append(v)
-print("The items of the List are", lst)
+print("The items of the List are\n", lst)
+print("________________________________________")
 while(1):
     n=int(input("Enter your Choice: "))
     if(n==1):
+        print("---------------------------------")
         print("Length of the List is:",len(lst))
+        print("---------------------------------")
     elif (n==2):
-        print("Enter the element to append") lst.append(input())
-        print("The items of the List are", lst)
-    elif (n==3): 
+        print("---------------------------------")
+        print("Enter the element to append : ")
+        lst.append(input())
+        print("The items of the List are ", lst)
+        print("---------------------------------")
+    elif (n==3):
+        print("---------------------------------")
         print("Sorting the list") 
         lst.sort()
         print("The items of the Sorted List are", lst)
+        print("---------------------------------")
     elif (n==4):
+        print("---------------------------------")
         print("Insert into list")
-        p=int(input("Enter the position to insert")) 
-        a=input("Enter the Item")
+        p=int(input("Enter the position to insert :")) 
+        a=input("Enter the Item :")
         lst.insert(p,a)
-        print("The items of the List are", lst)
-    elif (n==5): 
+        print("The items of the List are :", lst)
+        print("---------------------------------")
+    elif (n==5):
+        print("---------------------------------")
         print("Reverse of list") 
         lst.reverse()
-        print("The items of the List are", lst)
+        print("The items of the List are : ", lst)
+        print("---------------------------------")
     elif (n==6):
+        print("---------------------------------")
         print("Delete item from the list") 
-        r=int(input("Enter the position to delete")) lst.pop(r)
-        print("The items of the List are", lst)
-    elif (n==7): 
-        print("Exited") 
+        r=int(input("Enter the position to delete :"))
+        lst.pop(r)
+        print("The items of the List are :", lst)
+        print("---------------------------------")
+    elif (n==7):
+        print("---------------------------------")
+        print("Exited")
+        print("---------------------------------")
         break
+    
     else:
-        print("Invalid Choice") 
+        print("---------------------------------")
+        print("Invalid Choice,\n choose the choice between 1 to 7")
+        print("---------------------------------")
+
+
+
 
 
 
 def test(lst_tuples):
-
     result = [list(el) for el in lst_tuples] 
     return result
+
 lst_tuples = [(1,2), (2,3), (3,4)]
+print("__________________*___________________")
 print("Original list of tuples:") 
 print(lst_tuples)
+print("__________________*___________________")
 print("Convert the said list of tuples to a list of lists:") 
 print(test(lst_tuples))
-lst_tuples = [(1,2), (2,3,5), (3,4), (2,3,4,2)]
-
-print("\n Original list of tuples:") 
+print("__________________*___________________")
+lst_tuples = [(1,2), (1,3), (1,4), (1,2,3,4)]
+print("Original list of tuples:") 
 print(lst_tuples)
+print("__________________*___________________")
 print("Convert the said list of tuples to a list of lists:") 
 print(test(lst_tuples))
+print("__________________*___________________")
 
-
-# Create a Numeric 
-Tuple intTuple = ()
-number = int(input("Please enter the Total Tuple Items to store = ")) 
+inttuple = ()
+number = int(input("Please enter the total tuple items to store = ")) 
 for i in range(1, number + 1):
-    value = int(input("Please enter %d binary Tuple Item = " %i)) intTuple += (value,)
+    value = int(input("Please enter %d binary Tuple Item = " %i))
+    inttuple += (value,)
 
 
-print("Tuple Items = ", intTuple)
-# using int() with base to get actual number 
-res = int("".join(str(ele) for ele in intTuple), 2)
-
-
-# printing result
-
+print("Tuple Items = ", inttuple)
+res = int("".join(str(ele) for ele in inttuple), 2)
 print("Decimal number is : " + str(res)) 
 
 
@@ -148,21 +183,27 @@ print("Decimal number is : " + str(res))
 
 
 marks = {}
-n=int(input("Enter the number of students"))
+n=int(input("Enter the number of students: "))
 for i in range(n):
+    
     student_name = input("Enter student's name: ")
-    student_mark = input("Enter student's mark: ")
-    marks[student_name.title()] = student_mark
+    student_mark1 = input("Enter student's mark: ")
+    student_mark2 = input("Enter student's mark: ")
+    print("______________________________________")
+    marks[student_name.title()] = student_mark1 , student_mark2
 
 print("\nOriginal Dictionary = ", marks)
+print("------------------------------------------------------------------------")
 smarks = sorted(marks.items())
-print("Sorted Dictionary in Ascending= ", smarks)
-
+print("\nSorted Dictionary in Ascending= ", smarks)
+print("------------------------------------------------------------------------")
 kmarks= sorted(marks.keys())
 print("\nSorted Dictionary Keys in Ascending = ", kmarks)
-
+print("------------------------------------------------------------------------")
 vmarks = sorted(marks.values())
-print("Sorted Dictionary Values in Ascending = ", vmarks)
+print("\nSorted Dictionary Values in Ascending = ", vmarks)
+print("------------------------------------------------------------------------")
+
 
 
 
@@ -191,7 +232,9 @@ print(reduce_result)
 
 
 
-//FILE 1:SAVE AS module1.py 
+
+
+//module1.py 
 def triangle(a,b,c):
     peri = (a+b+c)/2
     print (" The Semi perimeter of Triangle :", peri) 
@@ -199,27 +242,28 @@ def triangle(a,b,c):
     print ( " The Area of Triangle is :", area)
 
 
-//FILE2:SAVE AS module2.py 
+//module2.py 
 def rectangle(a,b):
    peri = 2 * (a+b)
    print (" The Semi perimeter of Rectangle :", peri) 
    area = a * b
    print ( " The Area of Rectangle is :", area)
 
-//FILE3:SAVE AS module3.py 
+//module3.py 
 def square(a):
     peri = 4 * (a)
     print (" The Semi perimeter of Square :", peri) 
     area = a * a
     print ( " The Area of Square is :", area)
 
-//FILE4:SAVE AS final.py
+
 from module1 import triangle 
 from module2 import rectangle 
 from module3 import square 
-triangle(5,6,7)
-rectangle(5,10) 
-square(5) 
+triangle(2,3,4)
+rectangle(3,6) 
+square(4) 
+ 
 
 
 
