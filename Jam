@@ -270,20 +270,26 @@ square(4)
 
 class employee(): 
     empcount = 0
-    def   init (self, eid, name, salary, did): 
-        self.eid = eid
-        self.name = name 
-        self.salary = salary 
-        self.did = did 
-        employee.empcount += 1
+    def __init__(self, eid, name, salary, did): 
+        self.eid=eid
+        self.name=name 
+        self.salary=salary 
+        self.did=did 
+        employee.empcount+=1
 
-def displayemployee(self):
-    print("eid:", self.eid, ",name:", self.name, ",salary:", self.salary, ",did:", self.did) 
-    emp1 = employee(1, "zara", 2000, 10)
-    emp2 = employee(2, "meera", 4000, 20) 
-    emp1.displayemployee() 
-    emp2.displayemployee()
-    print("total employee %d" %employee.empcount) 
+    def displayemployee(self):
+        print("\neid:", self.eid, "\nname:", self.name, "\nsalary:", self.salary, "\ndid:", self.did) 
+
+emp1=employee(1, "Anu", 90000, 10)
+emp2=employee(2, "Akilan", 80000, 20)
+emp3=employee(3, "Priya", 100000, 27)
+emp4=employee(4, "Nivi",95000,25)
+
+emp1.displayemployee() 
+emp2.displayemployee()
+emp3.displayemployee()
+emp4.displayemployee()                
+print("The count of total employee is " , employee.empcount) 
 
 
 
